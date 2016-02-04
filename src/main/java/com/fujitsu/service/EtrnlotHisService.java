@@ -7,8 +7,8 @@ package com.fujitsu.service;
 
 import com.fujitsu.dao.CRUDMapper;
 import com.fujitsu.dao.EtrnlotHisMapper;
-import com.my.mode.mesmgr.EtrnlotHis;
-import com.my.mode.mesmgr.EtrnlotHisKey;
+import com.fujitsu.mode.EtrnlotHis;
+import com.fujitsu.mode.EtrnlotHisKey;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import org.mybatis.cdi.Mapper;

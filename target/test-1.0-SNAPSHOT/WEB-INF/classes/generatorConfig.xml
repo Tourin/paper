@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="src/main/resources/devlib/ojdbc7.jar" />
+	<context id="oracleTables" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@//172.16.20.6:1521/MESDB" userId="mesmgr"
+			password="mesmgr6" />
+		<javaModelGenerator targetPackage="com.my.mode"
+			targetProject="src/main/resources/gensrc">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.my.mode.xml"
+			targetProject="src/main/resources/gensrc">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<javaClientGenerator targetPackage="com.my.dao"
+			targetProject="src/main/resources/gensrc" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- データベースのテーブル とjavaのファイル名 -->
+		<!-- S2I -->
+		<table schema="MESMGR" tableName="ETRNLOTHIS" domainObjectName="EtrnlotHis"></table>
+	</context>
+</generatorConfiguration>
