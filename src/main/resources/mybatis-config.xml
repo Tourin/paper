@@ -8,31 +8,31 @@
     <settings>
         <setting name="logImpl" value="LOG4J" />
     </settings>
-    <environments default="development">
-        <environment id="MES">
+    <environments default="default">
+        <environment id="test">
             <transactionManager type="MANAGED">
                 <property name="closeConnection" value="false"/>
             </transactionManager>
             <dataSource type="POOLED">
-                <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-                <property name="url" value="jdbc:oracle:thin:@//172.16.20.6:1521/MESDB"/>
-                <property name="username" value="mesmgr"/>
-                <property name="password" value="mesmgr6"/>
+                <property name="driver" value="org.postgresql.Driver"/>
+                <property name="url" value="jdbc:postgresql://127.0.0.1:5432/kuwa"/>
+                <property name="username" value="postgres"/>
+                <property name="password" value="postgres"/>
             </dataSource>
         </environment>
-        <environment id="RPT">
+        <environment id="default">
             <transactionManager type="MANAGED">
                 <property name="closeConnection" value="false"/>
             </transactionManager>
             <dataSource type="POOLED">
-                <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-                <property name="url" value="jdbc:oracle:thin:@//172.16.20.6:1521/RPTDB"/>
-                <property name="username" value="RPTMGR"/>
-                <property name="password" value="rpt@#$mgr"/>
+                <property name="driver" value="org.postgresql.Driver"/>
+                <property name="url" value="jdbc:postgresql://198.148.116.121:5432/kuwa"/>
+                <property name="username" value="postgres"/>
+                <property name="password" value="postgres"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/fujitsu/mode/xml/EtrnlotHisMapper.xml"/>
+        <mapper resource="mapper/VpnMapper.xml"/>
     </mappers>
-</configuration
+</configuration>
