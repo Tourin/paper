@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/templates/_layout.xhtml">
+    <ui:param name="viewBean" value="#{vpnViewBean}" />
+    <ui:define name="content">
+        <p:panel id="search" header="剩余时间查询">
+            <h:panelGrid columns="3" cellpadding="5">  
+                <p:outputLabel for="qq" value="输入您的qq或者旺旺号:" />   
+                <p:inputText id="qq" value="#{viewBean.qq}" required="true"/>  
+                <p:commandButton value="查询" actionListener="#{viewBean.search}" update="searchResult" />
+            </h:panelGrid>  
+        </p:panel>
+        <p:panel id="searchResult" header="查询结果">
+            <h:outputText value="#{viewBean.result}"/>
+        </p:panel>
+        <p:panel id="connect" header="续费联系方式">
+            <h:panelGrid columns="1" cellpadding="5">  
+                <h:outputText value="客服QQ号:247887062"/>
+                <h:outputLink value="https://item.taobao.com/item.htm?id=526230017798" target="_blank">购买地址1（上网用）</h:outputLink>
+                <h:outputLink value="https://item.taobao.com/item.htm?id=525912694462" target="_blank">购买地址2（游戏专用）</h:outputLink>
+            </h:panelGrid>
+        </p:panel>
+    </ui:define>
+</ui:composition>
