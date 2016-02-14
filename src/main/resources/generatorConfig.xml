@@ -4,7 +4,7 @@
 	<classPathEntry location="src/main/resources/devlib/postgresql-9.3-1103.jdbc3.jar" />
 	<context id="oracleTables" targetRuntime="MyBatis3">
 		<jdbcConnection driverClass="org.postgresql.Driver"
-			connectionURL="jdbc:postgresql://198.148.116.121:5432/kuwa" userId="postgres"
+			connectionURL="jdbc:postgresql://127.0.0.1.121:5432/kuwa" userId="postgres"
 			password="postgres" />
 		<javaModelGenerator targetPackage="com.tojsq.mode"
 			targetProject="src/main/resources/gensrc">
