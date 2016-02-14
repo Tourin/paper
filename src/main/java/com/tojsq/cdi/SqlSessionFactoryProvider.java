@@ -25,11 +25,6 @@ public class SqlSessionFactoryProvider {
     @ApplicationScoped
     public SqlSessionFactory produceFactory() throws IOException {
         InputStream inputStream = Resources.getResourceAsStream(SqlSessionFactoryProvider.class.getClassLoader(), MYBATIS_CONFIG_XML);
-        if(inputStream==null   ){
-            System.out.println("找不到配置文件");
-        }else{
-            System.out.println("成功加载配置文件");
-        }
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         return sqlSessionFactory;
     }
