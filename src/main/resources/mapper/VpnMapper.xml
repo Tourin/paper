@@ -97,5 +97,6 @@
         <include refid="Base_Column_List" />
         from public.vpn
         where qq = #{qq,jdbcType=VARCHAR}
+        order by id desc
     </select>
 </mapper>
